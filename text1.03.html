@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+              font-family: 'Trebuchet MS', typewriter;
+            }
+
+            p {
+              font-size: 12pt;
+            }
+
+            h2 {
+              font-size: 15pt;
+            }
+            
+            .content {
+                padding: 30px;
+                font-size: 20px;
+                }
+
+            .brown {
+              font-size: 12pt;
+                color: rgb(67, 67, 67);
+
+                }
+            .collapsible {
+                background-color: #ffffff;
+                cursor: pointer;
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+                font-size: 20px;
+                padding: 10px
+                }
+            .active, .collapsible:hover {
+                background-color: #999999;
+                }
+            
+            .collapsible-content {
+                padding: 0 30px;
+                display: none;
+                overflow: hidden;
+                font-size: 20px;
+                background-color: #f1f1f1;
+                }
+
+            .container {
+                overflow: hidden;
+              }
+
+            .filterDiv {
+              float: up;
+              display: none; /* Hidden by default */
+            }
+
+            /* The "show" class is added to the filtered elements */
+            .show {
+              display: block;
+            }
+
+            /* Style the buttons */
+            .btn {
+              border: none;
+              outline: none;
+              padding: 12px 16px;
+              background-color: #f1f1f1;
+              cursor: pointer;
+            }
+
+            /* Add a light grey background on mouse-over */
+            .btn:hover {
+              background-color: #ddd;
+            }
+
+            /* Add a dark background to the active button */
+            .btn.active {
+              background-color: #666;
+              color: white;
+            }
+
+            #more {display: none;}
+            .nav {
+            width: 100vw;
+            height: 40vh;
+            background-color: #3944F7;
+            font-size: x-large;
+            color: white;
+            text-align: center;
+            margin: 10px 5px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            place-items: center;
+        }
+
+        .left {
+  float: left;
+  width: 200px;
+  padding: 30px;
+}
+
+.right {
+  float: right;
+  width: 70%;
+  padding: 30px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+}
+
+/* Use a media query to add a break point at 800px: */
+@media screen and (max-width: 1000px) {
+  .left, .main, .right {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+
+            </style>
+
+            
+    </head>
+    <body>
+        <section class="left sticky">
+            <div >
+              <div class="james">
+              <h1 class="title" style="font-size: 27pt;">JAMES LAYTON</h1>
+              <img src="jameslayton_headshot_jpg.jpg" alt="James Layton" style="width:250px;">
+              
+              <nav style="padding: 30px;">
+                  <a href="#section1">about</a><br>
+                  <a href="#section2">works</a><br>
+                  <a href="#section3">listen</a><br>
+                  <a href="#section4">calender</a><br>
+              </nav>
+            </div>
+        </div>
+        </section>
+
+        <section class="right">
+
+        <section class="content" id="section1">
+            <div>
+                <h2>about</h2>
+                <p style="font-size: 12pt"> James’ compositional output includes works for opera (<b>saudade</b> 2022), orchestra (focal 2019), chamber music (honour thy error as a hidden intention 2023), choir (veering slowly, losing identity 2023), as well as electro-acoustic music (are we on other, less concrete shores?), and collaborations with dance (Rock-A-Bye 2023) and visual media (time spent 2023). This work has been performed around Europe by musicians and ensembles such as Cikada (NO), Orkest de Ereprijs (NE), I Solisti (BE), Ensemble Spectrum (SK), Stephen Upshaw (US/UK), Ensemble Ernst (NO), Ostravská Banda (CZ) and ONO – Ostrava New Orchestra (CZ), including at festivals such as Bergen Festspillene (2024), Bijloke Wonderland (2023), NODO/New Opera Days Ostrava (2022) and Ostrava New Music Days (2019). 
+                </p>
+            </div>
+        </section>
+        <section class="content" id="section2">
+            <h2>works</h2>
+                <p>
+                  <button class="collapsible">
+                    new work for <i>Tomas Laukvik Nannestad</i> (2024)
+                  </button>
+                </p>
+                
+                <div id="myBtnContainer">
+                    <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+                    <button class="btn" onclick="filterSelection('orchestra')"> large ensemble</button>
+                    <button class="btn" onclick="filterSelection('chamber-large')"> chamber (5+ players or open)</button>
+                    <button class="btn" onclick="filterSelection('chamber-small')"> chamber (2-5 players)</button>
+                    <button class="btn" onclick="filterSelection('voice')"> voice</button>
+                    <button class="btn" onclick="filterSelection('electric')"> electro-acoustic/electronic</button>
+                    <button class="btn" onclick="filterSelection('dance')"> dance</button>
+                    <hr>
+                </div>
+
+                <div class="container">
+                    
+                    <div class="filterDiv all chamber-small">
+                        <button type="button" class="collapsible">
+                            weav (2024) <br>
+                            <i class="brown">for bass flute, bass clarinet and piano</i>
+                            <hr>
+                        </button>
+                        <div class="collapsible-content">
+                            <p class="brown">
+                                <b>first performance: </b>03.06.24 || <i>Cikada</i> || Universitetsaulaen, Bergen, NO <br>
+                                <b>written for: </b><i>Cikada</i><br>
+                                <b>duration: </b>ca. 7'
+                            </p>
+                            <p class="brown" style="padding: 20px;">
+                                <b>programme note: </b><br>
+                                As line overlaps line<br>
+                                waves intersect<br> 
+                                and weave<br> 
+                                expanding<br>
+                                contracting<br>
+                                an ebb and flow<br>
+                                pushing not on<br> 
+                                but to some<br> 
+                                distant<br>
+                                point <br>
+                                concealed<br>
+                                only by time 
+                            </p>
+                        </div>
+                    </div>
+                
+                    <div class="filterDiv all orchestra">
+                      <button type="button" class="collapsible"> 
+                          difference of differences (2024) <br>
+                          <i class="brown">for large ensemble</i>
+                          <hr>
+                      </button> 
+                      <div class="collapsible-content">
+                          <p class="brown">
+                              <b>instrumentation:</b> 2 electric guitars, accordion, percussion, 3 wind instruments [open], violin, viola, cello, double bass <br>
+                              <b>first performance: </b>12.04.24 || Lindemansalen, NMH, NO <br>
+                              <b>written for: </b>Ensemble Lime <br>
+                              <b>duration: </b>ca. 25'
+                          </p> 
+                          <div><iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/598367625&color=%235c5247&inverse=false&auto_play=false&show_user=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/james-layton-uk" title="James Layton" target="_blank" style="color: #cccccc; text-decoration: none;">James Layton</a> · <a href="https://soundcloud.com/james-layton-uk/focal-for-orchestra" title="Focal (for orchestra) [2019]" target="_blank" style="color: #cccccc; text-decoration: none;">Focal (for orchestra) [2019]</a></div></div>
+                      </div>
+                    </div>
+                    
+                    <div class="filterDiv all orchestra">
+                      <button type="button" class="collapsible">
+                          tilted form – four different ones (2023) <br>
+                          <i class="brown">for large ensemble</i>
+                          <hr>
+                      </button> 
+                      <div class="collapsible-content">
+                          <p class="brown">
+                              <b>instrumentation: </b>alto flute, bass flute, clarinet in Bb, soprano saxophone, soprano saxophone (db. baritone saxophone), horn in F, trumpet in C, 
+                              2 trombones, tuba, electric guitar, bass guitar, percussion and piano <br>                           
+                              <b>first performance: </b>01.03.24 || Gigant, Apeldoorn, NL <br>
+                              <b>written for: </b>Orkest de Ereprijs <br>
+                              <b>duration: </b>ca. 4'
+                          </p> 
+                      </div>
+                    </div>
+
+                    <div class="filterDiv all orchestra">
+                      <button type="button" class="collapsible">
+                        vertical seconds (2023) <br>
+                          <i class="brown">for orchestra</i>
+                          <hr>
+                      </button>
+                      <div class="collapsible-content">
+                        <p class="brown">
+                            <b>instrumentation: </b> 2.2.2.2- <br>                           
+                            <b>first performance: </b>08.12.24 || Lindemansalen, NMH, NO <br>
+                            <b>duration: </b>ca. 5'
+                        </p> 
+                      </div>
+                    </div>
+                    
+                    <div class="filterDiv all voice">
+                      <button type="button" class="collapsible">
+                        veering slowly, losing identity (2023) <br>
+                          <i class="brown">for choir</i>
+                          <hr>
+                      </button>
+                      <div class="collapsible-content">
+                        <p class="brown">
+                            <b>instrumentation: </b> 12 mixed voice (SATB) <br>                           
+                            <b>first performance: </b>27.10.24 || Majorstua Kirke, Oslo, NO <br>
+                            <b>duration: </b>ca. 8'
+                        </p> 
+                      </div>
+                    </div>
+
+                    <div class="filterDiv all chamber-small">
+                        <button type="button" class="collapsible">
+                            time spent (2023) <br>
+                            <i class="brown">for flute, clarinet, cello, vibraphone and moving image</i>
+                            <hr>
+                        </button>
+                        <div class="collapsible-content">
+                          <p class="brown">
+                              <b>instrumentation: </b> for flute, clarinet, cello, vibraphone and moving image <br>                           
+                              <b>first performance: </b>27.08.23 || De Bijloke, Ghent, BE <br>
+                              <b>written for: </b>I Solisti <br>
+                              <b>duration: </b>ca. 8'
+                          </p> 
+                        </div>
+                      </div>
+
+                      <div class="filterDiv all chamber-large">
+                        <button type="button" class="collapsible">
+                            honour thy error as a hidden intention (2023) <br>
+                            <i class="brown">for six instruments</i>
+                            <hr>
+                        </button>
+                        <div class="collapsible-content">
+                          <p class="brown">
+                              <b>instrumentation: </b> for flute, clarinet, violin, viola, cello and piano <br>                           
+                              <b>first performance: </b>27.08.23 || De Bijloke, Ghent, BE <br>
+                              <b>written for: </b>I Solisti <br>
+                              <b>duration: </b>ca. 8'
+                              <div><iframe width="560" height="315" src="https://www.youtube.com/embed/F2joPa6VqvM?si=a-XSmctp8J3MrCsj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                          </p> 
+                        </div>
+                      </div>
+                      <div class="filterDiv all dance">
+                        <button type="button" class="collapsible">
+                            Rock-A-Bye (2023) <br>
+                            <i class="brown">for dance</i>
+                            <hr>
+                        </button>
+
+
+                </div>
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    after calder (2022) <br>
+                    saudade (2022) <br>
+                    are we on other, less concrete shores? (2021) <br>
+                    these memories are not my own, they're borrowed from my past (2021) <br>
+                    i needed colour (2020) <br>
+                    jean, you forgot to pay the electric bill! (2020) <br>
+                    insekten (2020) <br>
+                    i love the whole world (2019) <br>
+                    focal (2019) <br>
+                    wandering (2018) <br>
+                    slowly getting nowhere (2018) <br>
+                    tectonics (2018) <br>
+                    breathless (2017) <br>
+                    afar fen (2016) <br>
+                     
+                </p>
+        </section>
+        <section class="content" id="section3">
+            <h2>recordings</h2>
+            <div><iframe style="border: 0; width: 50%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=1864294169/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://ensemblespectrum.bandcamp.com/album/new-dawn-vol-3-forced-movement">New Dawn Vol. 3 – (forced) Movement by EnsembleSpectrum</a></iframe></div>
+            <div><iframe style="border: 0; width: 50%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=3272384669/size=small/bgcol=ffffff/linkcol=0687f5/artwork=none/track=564393992/transparent=true/" seamless><a href="https://ereprijs.bandcamp.com/album/young-composers-meeting-2024-album">Young Composers Meeting 2024 (album) by Orkest De Ereprijs</a></iframe></div>
+        </section>
+        <section class="content" id="section4">
+            <div>
+                <p>
+                    <h2>calender</h2>
+                    <h3>upcoming</h3><hr>
+                    <p>
+                        05.07.24 || "honour thy error as a hidden intention" performed by <i>Standard Issue</i> 
+                        @ Music We'd Like to Hear, London, UK || composer <br>
+                        21.11.24 || new work for Tomas Laukvik Nannestad @ Oslo [venue tbc] || composer <br>
+                        autumn 24 [date tbc] || "weav" performed by <i>Cikada</i> || composer <br>
+                    </p>
+                    <h3>past</h3><hr>
+                    <p>
+                        03.04.24 || "weav" [premiere] performed by <i>Cikada</i> @ The Aula || composer <br>
+                        31.05.24 || Games Night with Peter Peschel @ Victoria Nasjonal Jazzscene || performer <br>
+                        21.04.24 || "titled form - four different ones" performed by Orkest De Ereprijs @ ACEC, Apeldoorn, NL || composer <br> 
+                        11.04.24 || "a difference of differences"[premiere] performed by Ensemble Lime @ Lindemansalen, NMH, Oslo, NO  || composer <br> 
+                        20.04.24 || Listening: Resonating @ Levinsalen, NMH, NO || perfomer <br> 
+                        01.03.24 || "titled form - four different ones"[premiere] performed by Orkest De Ereprijs @ Gigant, Apeldoorn, NL || composer <br> 
+                         
+                        <span id="dots">...</span><span id="more">
+                        09.12.23 || "vertical seconds" performed by NMH Symphony Orchestra @ Lindemansalen, NMH, Oslo, NO || composer <br>
+                        08.12.23 || "vertical seconds" [premiere] performed by NMH Symphony Orchestra @ Lindemansalen, NMH, Oslo, NO || composer <br>
+                        03.12.23 || Nurmi, Schwarz, Rubli and Layton - Samtidsmusikkpub @ Kafé Hærverk, Oslo, NO || composer + performer <br>
+                        14.11.23 || "wandering" performed by Stephen Upshaw @ Cambridge University, UK || composer <br>
+                        11.11.23 || Rock-A-Bye - Ida Cathrin Utvik @ Festiviteten, Haugesund, NO || composer <br>
+                        27.10.23 || "veering slowly, losing identity" [premiere] performed NMH Vokalensemble, conducted by Henri Raeck and Victor Cheng @ Majorstua Kirke, Oslo, NO || composer <br>
+                        27.08.23 || "time spent" [premiere] performed by I Soliti, conducted by Filip Rathe @ De Bijloke, Ghent, BE || composer 
+                        </span></p>
+
+                        <button onclick="myFunction()" id="myBtn">Read more</button>
+                    </p>
+                </p>
+            </div>
+        </section>
+        <section>
+            <p> contact - james [dot] layton [dot] uk [at] outlook [dot] com</p>
+        </section>
+    </section>
+        
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+            
+            for (i = 0; i < coll.length; i++) {
+              coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                  content.style.display = "none";
+                } else {
+                  content.style.display = "block";
+                }
+              });
+            }
+
+
+            filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more";
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less";
+    moreText.style.display = "inline";
+  }
+}
+            </script>
+    </body>
+    
+</html>
